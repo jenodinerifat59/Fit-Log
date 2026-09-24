@@ -1,8 +1,11 @@
 import { WorkoutType } from "@/type/workoutType";
+import { Flame , Star, Timer } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const HomeCard = ({ data }: { data: WorkoutType }) => {
   return (
+    <Link href={`/workouts/${data.id}`}>
     <div
       className=" rounded-xl bg-[#15171D] p-4  transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(194,248,0,0.12)]">
       <Image src={data.image}alt={data.name} width={100} height={100} className="h-56 w-full rounded-lg object-cover transition-transform duration-500 hover:scale-105"/>
@@ -19,11 +22,12 @@ const HomeCard = ({ data }: { data: WorkoutType }) => {
       </p>
       <hr className="my-4 border-gray-700" />
       <div className="flex justify-between text-sm text-gray-500">
-        <span>{data.duration} min</span>
-        <span>{data.caloriesBurned} kcal</span>
-        <span>⭐ {data.rating}</span>
+        <span className="flex gap-2 items-center"><Timer /> {data.duration} min</span>
+        <span className="flex gap-2 items-center"><Flame /> {data.caloriesBurned} kcal</span>
+        <span className="flex gap-2 items-center"><Star /> {data.rating}</span>
       </div>
     </div>
+    </Link>
   );
 };
 export default HomeCard;
