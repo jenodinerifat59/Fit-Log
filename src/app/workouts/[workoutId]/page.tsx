@@ -1,5 +1,7 @@
 import Image from "next/image";
 import type { WorkoutType } from "@/type/workoutType";
+import WorkoutPlan from "@/context/btn/WorkoutPlan";
+import SaveLater from "@/context/btn/SaveLater";
 
 const getWorkout = async (workoutId: string): Promise<WorkoutType | null> => {
   const res = await fetch(
@@ -101,12 +103,10 @@ const Page = async ({ params }: { params: Promise<{ workoutId: string }> }) => {
             </ol>
           </div>
           <div className="mt-8 flex gap-3">
-            <button className="rounded-md bg-[#C2F800] px-5 py-3 text-sm font-semibold text-black">
-              Add to workout plan
-            </button>
-            <button className="rounded-md border border-gray-700 px-5 py-3 text-sm text-white">
-              Save for later
-            </button>
+            
+            <WorkoutPlan workout ={workout}/>
+            
+            <SaveLater workout={workout}/>
           </div>
         </div>
       </div>
