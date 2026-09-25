@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/component/Navbar";
 import { ReactNode } from "react";
 import DataContextProvider from "@/context/DataContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +34,7 @@ export default function RootLayout({ children }:  {
         <DataContextProvider>
         <Navbar/>
         {children}
+          <ToastContainer />
         </DataContextProvider>
         </body>
         

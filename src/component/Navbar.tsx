@@ -52,7 +52,7 @@ const Navbar = () => {
             >Plan <span className="border border-gray-500 rounded-full px-2 py-1 text-[#C2F800]">0</span>
             </Link>
             <Link
-              href="/saved"
+              href="/my-plan"
               className="text-white flex items-center gap-2"> Saved
               <span className="border border-gray-500 rounded-full px-2 py-1">0</span>
             </Link>
