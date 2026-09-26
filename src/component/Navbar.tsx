@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Image from "next/image";
 import Logo from "../../public/assets/logo.png";
@@ -18,7 +18,7 @@ const Navbar = () => {
   const links = (
     <>
       <li className="rounded-md hover:bg-[#C2F800] hover:text-black">
-        <Link href="/">Workouts</Link>
+        <Link href="/workouts">Workouts</Link>
       </li>
 
       <li className="rounded-md hover:bg-[#C2F800] hover:text-black">
@@ -48,24 +48,14 @@ const Navbar = () => {
                 {links}
               </ul>
             </div>
-
             <Link href="/" className="flex items-center gap-2">
-              <Image
-                src={Logo}
-                alt="FITLOG logo"
-                width={35}
-                height={35}
-              />
-              <p className="text-lg font-black text-white">
-                FITLOG
-              </p>
+              <Image src={Logo} alt="FITLOG logo" width={35} height={35} />
+              <p className="text-lg font-black text-white">FITLOG</p>
             </Link>
           </div>
 
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 text-white">
-              {links}
-            </ul>
+            <ul className="menu menu-horizontal px-1 text-white">{links}</ul>
           </div>
 
           <div className="navbar-end gap-2">
