@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import Image from "next/image";
 import Logo from "../../public/assets/logo.png";
@@ -17,11 +17,11 @@ const Navbar = () => {
 
   const links = (
     <>
-      <li>
+      <li className="rounded-md hover:bg-[#C2F800] hover:text-black">
         <Link href="/">Workouts</Link>
       </li>
 
-      <li>
+      <li className="rounded-md hover:bg-[#C2F800] hover:text-black">
         <Link href="/my-plan">My Plan</Link>
       </li>
     </>
